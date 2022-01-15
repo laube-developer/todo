@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root{
+  --gap: 1rem;
+  --item-bg: rgb(233, 233, 233);
+  --raio-borda: 5px;
+  --box-width: 300px;
+  --blue: rgb(30, 104, 243);
+  --red: rgb(240, 35, 62);
+}
