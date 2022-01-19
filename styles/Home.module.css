@@ -18,12 +18,14 @@
   gap: var(--gap);
 }
 
-.item{
+.item,
+.item_check{
   width: 100%;
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: 3rem auto 4rem;
+  grid-template-rows: 2rem;
   align-items: center;
-  justify-content: space-between;
   flex-direction: row;
   padding: var(--gap);
   background: var(--item-bg);
@@ -31,9 +33,19 @@
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.253);
 }
 
-.item span{
+.item input[type='checkbox'],
+.item_check input[type='checkbox']
+{
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.item span,
+.item_check span{
   width: 2rem;
   height: 2rem;
+  justify-self: flex-end;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,10 +54,19 @@
   border-radius: var(--raio-borda);
 }
 
-.item span:hover{
+.item span:hover,
+.item_check span:hover
+{
   background: var(--red);
   font-weight: 600;
   color: white;
+}
+
+.item_check{
+    opacity: .3;
+}
+.p_check{
+    text-decoration: line-through;
 }
 
 .controls{
@@ -72,6 +93,12 @@
 
 .controls input{
   text-indent: var(--gap);
+}
+
+.controls input::placeholder{
+  color: rgba(255, 255, 255, 0);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.397), rgba(255, 255, 255, 0.062));
+  background-clip: text;
 }
 
 .controls button{
